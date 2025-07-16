@@ -10,150 +10,66 @@ This guide demonstrates how to install and configure the open-source ticketing s
 - Remote Desktop
 - Internet Information Services (IIS)
 
-<h2>List of Prerequisites</h2>
+<h2>Prerequisites</h2>
 Before starting, ensure the following environment is in place:
-  - Azure Resource Group (osTicketRG).
-  - Azure Virtual Machine
+
+  - Azure Resource Group (example: osTicketRG)
+  - Azure Virtual Machine (example: osticketVM)
     - Operating System: Windows 10 Pro, version 22H2 - x64 Gen2
     - Size: 4 vCPUs
-    - Name: osticketVM
-  - Remote Desktop Access enabled (for connecting to the VM).
+  - Remote Desktop Access enabled (for connecting to the VM)
+  - [osTicket Installation Files](https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6)
 
-💡 This guide assumes you can log into the VM via Remote Desktop.
+<h2>Installation Steps</h2>
+
+<h3>0️⃣ Overview of osTicket Installation </h3>
+
 - Enable Internet Information Services
 - Install Web Platform Installer
 - Install MySQL and Set Up Useranme and Password
 - Install C++ Redistributable
 - Congure Permissions and Install osTicket
 
-<h2>Installation Steps</h2>
+<h3>1️⃣ Install/Enable Internet Information Services (IIS) with CGI </h3>
 
-<h3>0️⃣ Overview of Azure Resources </h3>
 
-We will create and work with the following resources in Microsoft Azure:
-- Virtual Machines:
-  - one for the domain controller (dc-1 running Windows Server 2022)
-  - one for the client machine (client-1 running Windows 10)
-- Resource Groups: To organize and manage related resources.
-- Virtual Networks: To allow secure communication between the virtual machines. 
 
-By the end, your Azure portal should look similar to this: 
+<h3> 2️⃣ Install PHP Manager for IIS </h3>
 
-<img width="801" alt="azure" src="https://github.com/user-attachments/assets/f81c6800-45ef-4c8d-be3c-1f2bde5a0e9c" /> 
 
-<h3>1️⃣ Create Resource Group</h3>
-<p> Go to the Azure Portal and navigate to Resource Groups. </p>
-<p> Click + Create, and create a resource group. </p>
 
-<img width="539" alt="resourcegroup" src="https://github.com/user-attachments/assets/fe39fb40-c24b-4cd9-898c-d6225b75d3cd" />
+<h3> 3️⃣ Install IIS Rewrite Module </h3>
 
-<h3> 2️⃣ Create Virtual Network </h3>
 
-<p> Go to the Azure Portal and navigate to Virtual Networks. </p>
-<p> Click + Create, and create a virtual network. </p>
 
-<img width="557" alt="vnet" src="https://github.com/user-attachments/assets/23e03380-e422-4080-85b6-0c52e51fc28f" />
+<h3> 4️⃣ Setup PHP </h3>
 
-<h3> 3️⃣ Create Client VM </h3>
 
-<p>In an Active Directory environment, a client machine is needed to later join to the domain, test authentication, and demonstrate communication with the Domain Controller.</p>
-Create a Virtual Machine with the following configuration:
 
-- Resource Group: Choose the Resource Group we created earlier
-- Name: set to your choice 
-- Image: Windows 10 Pro, version 22H2
-- Size: 2 vCPUs, 8 GiB memory
-- Username/Password: set to your choice 
-- Licensing: Check the box to confirm Windows licensing
-- Network: Choose the Virtual Network we created earlier
+<h3> 5️⃣ Install additional prerequisites within osTicket installation Files </h3>
 
-Click Review + Create, then Create.
 
-<img width="454" alt="client-1" src="https://github.com/user-attachments/assets/ccb69a2a-feaa-498b-85ab-29d5cd941232" />
 
-<img width="475" alt="vmsize,password,licensing" src="https://github.com/user-attachments/assets/d5637f58-db61-47a7-adc8-29ce88bf8d13" />
+<h3> 6️⃣ Configure PHP in IIS </h3>
 
-<h3> 4️⃣ Create Domain Controller VM </h3>
-<p>In an Active Directory environment, the Domain Controller (DC) also serves as the DNS server, handling all internal name resolution needed for domain authentication and resource access.</p>
-Create a new Virtual Machine with the following configuration:
 
-- Resource Group: Choose the Resource Group we created earlier
-- Name: set to your choice 
-- Image: Windows Server 2022 Datacenter
-- Size: 2 vCPUs, 8 GiB memory
-- Username/Password: Use the same username/password as before.
-- Virtual Network: Choose the Virtual Network we created earlier
 
-Click Review + Create, then Create.
+<h3> 7️⃣ Install osTicket </h3>
 
-<img width="457" alt="dc-1" src="https://github.com/user-attachments/assets/b60ef10f-8580-45a2-ad27-1d0e797c7ff8" />
 
-<h3> 5️⃣ Set Domain Controller's NIC Private IP address to static </h3>
 
-When configuring a DC, it’s essential that its IP address remains constant so that all domain-joined devices can reliably find it for authentication, DNS, and other directory services. 
+<h3> 8️⃣ Enable required PHP extensions </h3>
 
-This is critical because if the DC’s IP changes, clients relying on it for DNS and domain services would fail to locate it.
 
-Virtual Machine -> DC VM -> Network Settings -> Network Interface/IP Configuration
 
-Change Private IP address settings from Dynamic to Static.
+<h3> 9️⃣ Configure osTicket </h3>
 
-Click Save.
 
-<img width="622" alt="dc-1static" src="https://github.com/user-attachments/assets/f5c7c345-c953-45e0-9470-95ac16c70518" />
 
-<h3> 6️⃣ Set Client's DNS settings to Domain Controller's Private IP address </h3>
+<h3> 🔟 Setup the database </h3>
 
-This ensures that the Client directs all domain-related queries to the Domain Controller. 
 
-This is necessary so that when the Client later attempts to join the domain, it can correctly locate the domain controller using DNS.
 
-Virtual Machine -> Client VM -> Network Settings -> Network Interface/IP Configuration -> DNS Servers
+<h3> 1️⃣1️⃣ Finalize and cleanup </h3>
 
-Select Custom, and enter DC's private IP address.
 
-Click Save.
-
-<img width="530" alt="client-1dnsserver" src="https://github.com/user-attachments/assets/4b613a8d-545f-480e-92b2-9780598352fd" />
-
-<h3> 7️⃣ Restart Client VM </h3>
-
-<img width="818" alt="client-1restart" src="https://github.com/user-attachments/assets/affe18e4-5e96-4acb-8801-271db9f81adc" />
-
-<h3> 8️⃣ Login to Domain Controller VM </h3>
-
-Open Remote Desktop Connection.
-
-Enter DC’s public IP address and log in using the username/password you set before.
-
-<img width="807" alt="RDC-dc-1" src="https://github.com/user-attachments/assets/3ae1e24f-31ff-4da4-a332-04beb9d23077" />
-
-<h3> 9️⃣ Disable Firewall (for testing connectivity) </h3>
-
-Inside the DC VM, open Windows Defender Firewall with Advanced Security.
-
-Click Windows Defender Firewall Properties.
-
-For each profile (Domain, Private, Public), set Firewall state: Off
-
-<img width="782" alt="firewalloff" src="https://github.com/user-attachments/assets/41578574-1bb8-40d8-a212-bf55b87fa839" />
-
-<h3> 🔟 Login to Client VM </h3>
-
-Open Remote Desktop Connection.
-
-Enter Client’s public IP address and log in using the username/password you set before.
-
-<img width="806" alt="RDC-client-1" src="https://github.com/user-attachments/assets/1d221b42-b5d9-4b76-bfcf-542027fcd485" />
-
-<h3> 1️⃣1️⃣ Attempt to ping DC's private IP address (to ensure network connectivity)</h3>
-
-Inside the Client VM, open Windows Powershell.
-
-Ping DC's private IP address.
-
-Run ipconfig /all
-
-The output for the DNS settings should display DC’s private IP address, confirming that the client is using the Domain Controller for name resolution.
-
-<img width="610" alt="powershell" src="https://github.com/user-attachments/assets/8cc2bbcc-4fa3-46a3-9bdb-0694ed83e82a" />
