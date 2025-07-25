@@ -209,24 +209,28 @@ Everyone has full access now.
 
 <h3> 1️⃣1️⃣ Install HeidiSQL </h3>
 
-<img width="450" alt="59" src="https://github.com/user-attachments/assets/98372454-9f4c-4656-b071-705e8a08000a" />
-<img width="400" alt="60" src="https://github.com/user-attachments/assets/e9f28e1d-1669-4431-a77b-fd5ff78b8c93" />
-<img width="400" alt="61" src="https://github.com/user-attachments/assets/42700ad6-2665-4b72-9c2e-e146ea1f2d9b" />
-<img width="400" alt="62" src="https://github.com/user-attachments/assets/0f84abac-9d2c-465c-8df3-ee52f3b5269f" />
-<img width="400" alt="63" src="https://github.com/user-attachments/assets/b874219e-af39-482e-a78a-b05249d8dc35" />
-<img width="400" alt="64" src="https://github.com/user-attachments/assets/fa00f301-5486-429c-a12b-4fbaaf50f7ad" />
-<img width="402" alt="65" src="https://github.com/user-attachments/assets/f2b76b43-34de-4235-b1e3-a381ae49cfe6" />
-<img width="262" alt="66" src="https://github.com/user-attachments/assets/5cba9f85-ba4e-467f-96d8-b1d0bf3b7242" />
-<img width="400" alt="67" src="https://github.com/user-attachments/assets/02c21061-c47d-4b77-a403-c68cf31d57a9" />
-<img width="400" alt="68" src="https://github.com/user-attachments/assets/d2264114-8d6e-4500-b7c9-2f29f309671e" />
-<img width="550" alt="69" src="https://github.com/user-attachments/assets/28676a1d-ab36-453d-b3d1-df530f30d6a2" />
-<img width="350" alt="70" src="https://github.com/user-attachments/assets/d0f05e86-73cb-4fa4-b8f4-00980195065b" />
+From the osTicket Installation Files folder, run HeidiSQL_12.3.0.6589_Setup
+
+This lets you easily connect to your MySQL server, create a new database (osTicket), and inspect or modify tables. 
+
+<img width="500" alt="59" src="https://github.com/user-attachments/assets/98372454-9f4c-4656-b071-705e8a08000a" />
+<img width="450" alt="60" src="https://github.com/user-attachments/assets/e9f28e1d-1669-4431-a77b-fd5ff78b8c93" />
+<img width="450" alt="61" src="https://github.com/user-attachments/assets/42700ad6-2665-4b72-9c2e-e146ea1f2d9b" />
+<img width="450" alt="62" src="https://github.com/user-attachments/assets/0f84abac-9d2c-465c-8df3-ee52f3b5269f" />
+<img width="450" alt="63" src="https://github.com/user-attachments/assets/b874219e-af39-482e-a78a-b05249d8dc35" />
+<img width="450" alt="64" src="https://github.com/user-attachments/assets/fa00f301-5486-429c-a12b-4fbaaf50f7ad" />
+<img width="452" alt="65" src="https://github.com/user-attachments/assets/f2b76b43-34de-4235-b1e3-a381ae49cfe6" />
+<img width="294" alt="66" src="https://github.com/user-attachments/assets/5cba9f85-ba4e-467f-96d8-b1d0bf3b7242" />
+<img width="450" alt="67" src="https://github.com/user-attachments/assets/02c21061-c47d-4b77-a403-c68cf31d57a9" />
+<img width="450" alt="68" src="https://github.com/user-attachments/assets/d2264114-8d6e-4500-b7c9-2f29f309671e" />
+<img width="524" alt="69" src="https://github.com/user-attachments/assets/28676a1d-ab36-453d-b3d1-df530f30d6a2" />
+<img width="420" alt="70" src="https://github.com/user-attachments/assets/d0f05e86-73cb-4fa4-b8f4-00980195065b" />
 
 
 <h3> 1️⃣2️⃣ Setup the database </h3>
 
-<img width="450" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
-<img width="325" alt="72" src="https://github.com/user-attachments/assets/c276a26d-4cf0-49b6-92ae-1d56536ca53a" />
+<img width="540" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
+<img width="390" alt="72" src="https://github.com/user-attachments/assets/c276a26d-4cf0-49b6-92ae-1d56536ca53a" />
 
 
 <h3> 1️⃣3️⃣ Finalize and cleanup </h3>
