@@ -217,8 +217,8 @@ From the osTicket Installation Files folder, run HeidiSQL_12.3.0.6589_Setup
 
 This lets you easily connect to your MySQL server, create a new database (osTicket), and inspect or modify tables. 
 
-<img width="500" alt="59" src="https://github.com/user-attachments/assets/98372454-9f4c-4656-b071-705e8a08000a" />
-<img width="450" alt="60" src="https://github.com/user-attachments/assets/e9f28e1d-1669-4431-a77b-fd5ff78b8c93" />
+<img width="600" alt="59" src="https://github.com/user-attachments/assets/98372454-9f4c-4656-b071-705e8a08000a" />
+<img width="348" alt="60" src="https://github.com/user-attachments/assets/e9f28e1d-1669-4431-a77b-fd5ff78b8c93" />
 <img width="450" alt="61" src="https://github.com/user-attachments/assets/42700ad6-2665-4b72-9c2e-e146ea1f2d9b" />
 <img width="450" alt="62" src="https://github.com/user-attachments/assets/0f84abac-9d2c-465c-8df3-ee52f3b5269f" />
 <img width="450" alt="63" src="https://github.com/user-attachments/assets/b874219e-af39-482e-a78a-b05249d8dc35" />
