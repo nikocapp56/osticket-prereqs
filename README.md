@@ -241,6 +241,8 @@ Create a database called osTicket
 
 Go back to the osTicket website and continue with the setup. 
 
+<img width="540" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
+
 Name the Help Desk whatever you want. Same with the email.
 
 For the admin user, the email address needs to be different from the help desk email.
@@ -249,14 +251,14 @@ For the username and password, I just went with username: adminuser and password
 
 Enter osTicket for the MySQL Database and username: root and password: root
 
-<img width="540" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
-<img width="390" alt="72" src="https://github.com/user-attachments/assets/c276a26d-4cf0-49b6-92ae-1d56536ca53a" />
+<img width="490" alt="72 5" src="https://github.com/user-attachments/assets/1e7c9852-4a06-44fd-b52a-13e43a45fe76" />
 <img width="442" alt="73" src="https://github.com/user-attachments/assets/1d267246-eba9-4155-ac3d-689d65c0f274" />
 
 This is the link that you use for logging in as an admin. http://localhost/osTicket/scp/login.php
 
-<img width="700" alt="74" src="https://github.com/user-attachments/assets/02a52ecc-d682-4349-9421-ff70d6972f68" />
+<img width="900" alt="74" src="https://github.com/user-attachments/assets/c3de88ed-b060-41f9-b18f-f8371d8776d1" />
 
 This is the link for end-users to make trouble tickets for themselves. http://localhost/osTicket/
 
-<img width="700" alt="75" src="https://github.com/user-attachments/assets/abb8b765-77c8-4415-a890-bee2cdeb5699" />
+<img width="900" alt="75" src="https://github.com/user-attachments/assets/7397e660-d6ad-4fde-8759-94be484903b4" />
+
