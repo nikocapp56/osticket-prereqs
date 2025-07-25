@@ -63,7 +63,7 @@ Create the directory C:\PHP
 
 From the osTicket Installation Files folder, unzip php-7.3.8-nts-Win32-VC15-x86.zip into the C:\PHP folder
 
-This provides the actual language interpreter needed for osTicket to run. PHP 7.3 is used because osTicket v1.15.8 is known to be compatible with it.
+This provides the actual language interpreter needed for osTicket to run.
 
 <img width="284" alt="8 75" src="https://github.com/user-attachments/assets/e8e0cb7f-d39c-4179-9e70-89ce04eabc2c" />
 <img width="500" alt="9" src="https://github.com/user-attachments/assets/d8181fc2-29d5-463f-8f2c-c787ab3f76a5" />
@@ -162,8 +162,8 @@ Reload IIS (Run IIS as administrator, Stop and Start the server)
 Some extensions aren’t enabled yet, so go back into IIS -> Sites -> Default -> osTicket -> PHP Manager -> Enable or disable an extension
 
 <img width="750" alt="38" src="https://github.com/user-attachments/assets/bca59f03-e788-43e8-ba7a-21cbca1fc0f3" />
-<img width="650" alt="39" src="https://github.com/user-attachments/assets/353750f7-6409-40a9-a62e-1965640b5f79" />
-<img width="300" alt="40" src="https://github.com/user-attachments/assets/1d53d06a-4db9-498b-bb7b-99026bffbb8d" />
+<img width="657" alt="39" src="https://github.com/user-attachments/assets/353750f7-6409-40a9-a62e-1965640b5f79" />
+<img width="240" alt="40" src="https://github.com/user-attachments/assets/1d53d06a-4db9-498b-bb7b-99026bffbb8d" />
 
 Enable the following:
 
@@ -171,16 +171,64 @@ Enable the following:
 - php_intl.dll
 - php_opcache.dll
 
+<img width="300" alt="41" src="https://github.com/user-attachments/assets/86a463ce-7357-49c0-af78-a439d4f5a14a" />
+<img width="290" alt="42" src="https://github.com/user-attachments/assets/8f75c98d-9ed4-400d-9a0c-7c7821e2a97c" />
+<img width="300" alt="43" src="https://github.com/user-attachments/assets/6a9090b9-fd24-4a30-bac5-f89eb79b59e8" />
 
+Refresh the osTicket website and all the extensions that were just enabled are now checked off.
+
+<img width="600" alt="44" src="https://github.com/user-attachments/assets/046d6e3c-fd45-479b-8896-0c6236b82740" />
 
 <h3> 🔟 Configure osTicket </h3>
 
+Go to C: \ inetpub \ wwwroot \ osTicket \ include
+
+Rename ost-sampleconfig.php to ost-config.php
+
+<img width="400" alt="45" src="https://github.com/user-attachments/assets/9eb0f025-f411-46f6-9ed0-9bc4f3b02f46" />
+<img width="398" alt="46" src="https://github.com/user-attachments/assets/a8015e1a-de6f-45e0-88cb-c5fc9e3d74ce" />
+<img width="400" alt="47" src="https://github.com/user-attachments/assets/b3cab1a0-9ace-458a-b538-c790d0404e49" />
+<img width="270" alt="48" src="https://github.com/user-attachments/assets/33133bd6-bc9c-409e-8828-8cc8494b5133" />
+
+Disable inheritance -> Remove All
+
+<img width="500" alt="49" src="https://github.com/user-attachments/assets/b6a93bd9-e477-4fac-8f08-93689ce35638" />
+<img width="412" alt="50" src="https://github.com/user-attachments/assets/b96344cb-a845-4b7c-9150-cb518237ae1d" />
+
+Add New Permissions -> Select a principal -> Everyone -> Full control
+
+<img width="500" alt="51" src="https://github.com/user-attachments/assets/f7ffca35-52b0-48db-a46e-73188987bf4c" />
+<img width="412" alt="52" src="https://github.com/user-attachments/assets/8a11460d-87df-40ee-bfa3-b89a92fc4e15" />
+<img width="500" alt="54" src="https://github.com/user-attachments/assets/748629c8-aa25-4398-8324-d51758e4823a" />
+<img width="422" alt="55" src="https://github.com/user-attachments/assets/846ee99a-f6a3-48c3-b7f2-ee2d50208eb6" />
+
+Everyone has full access now.
+
+<img width="587" alt="56" src="https://github.com/user-attachments/assets/b2609d22-ff2a-4abd-9cb9-e135ef69d0c4" />
+<img width="280" alt="57" src="https://github.com/user-attachments/assets/b944985d-a482-40ea-8f1b-c16ba76e6dda" />
+
+<h3> 1️⃣1️⃣ Install HeidiSQL </h3>
+
+<img width="450" alt="59" src="https://github.com/user-attachments/assets/98372454-9f4c-4656-b071-705e8a08000a" />
+<img width="400" alt="60" src="https://github.com/user-attachments/assets/e9f28e1d-1669-4431-a77b-fd5ff78b8c93" />
+<img width="400" alt="61" src="https://github.com/user-attachments/assets/42700ad6-2665-4b72-9c2e-e146ea1f2d9b" />
+<img width="400" alt="62" src="https://github.com/user-attachments/assets/0f84abac-9d2c-465c-8df3-ee52f3b5269f" />
+<img width="400" alt="63" src="https://github.com/user-attachments/assets/b874219e-af39-482e-a78a-b05249d8dc35" />
+<img width="400" alt="64" src="https://github.com/user-attachments/assets/fa00f301-5486-429c-a12b-4fbaaf50f7ad" />
+<img width="402" alt="65" src="https://github.com/user-attachments/assets/f2b76b43-34de-4235-b1e3-a381ae49cfe6" />
+<img width="262" alt="66" src="https://github.com/user-attachments/assets/5cba9f85-ba4e-467f-96d8-b1d0bf3b7242" />
+<img width="400" alt="67" src="https://github.com/user-attachments/assets/02c21061-c47d-4b77-a403-c68cf31d57a9" />
+<img width="400" alt="68" src="https://github.com/user-attachments/assets/d2264114-8d6e-4500-b7c9-2f29f309671e" />
+<img width="550" alt="69" src="https://github.com/user-attachments/assets/28676a1d-ab36-453d-b3d1-df530f30d6a2" />
+<img width="350" alt="70" src="https://github.com/user-attachments/assets/d0f05e86-73cb-4fa4-b8f4-00980195065b" />
 
 
-<h3> 1️⃣1️⃣ Setup the database </h3>
+<h3> 1️⃣2️⃣ Setup the database </h3>
+
+<img width="450" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
+<img width="325" alt="72" src="https://github.com/user-attachments/assets/c276a26d-4cf0-49b6-92ae-1d56536ca53a" />
 
 
-
-<h3> 1️⃣1️⃣ Finalize and cleanup </h3>
+<h3> 1️⃣3️⃣ Finalize and cleanup </h3>
 
 
