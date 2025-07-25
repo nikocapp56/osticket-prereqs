@@ -24,11 +24,15 @@ Before starting, ensure the following environment is in place:
 
 <h3>0️⃣ Overview of osTicket Installation </h3>
 
-- Enable Internet Information Services
-- Install Web Platform Installer
-- Install MySQL and Set Up Useranme and Password
-- Install C++ Redistributable
-- Congure Permissions and Install osTicket
+In this walkthrough, we will: 
+
+- Set up IIS with required features to host the web app
+- Install and configure PHP so it works with IIS
+- Install MySQL as the database backend for osTicket
+- Set up PHP extensions required by osTicket
+- Move and configure osTicket web files into IIS's root directory
+- Use a browser to access osTicket and complete the installation
+- Create a MySQL database using HeidiSQL for osTicket to use
 
 <h3>1️⃣ Install/Enable Internet Information Services (IIS) with CGI </h3>
 
@@ -221,18 +225,38 @@ This lets you easily connect to your MySQL server, create a new database (osTick
 <img width="450" alt="64" src="https://github.com/user-attachments/assets/fa00f301-5486-429c-a12b-4fbaaf50f7ad" />
 <img width="452" alt="65" src="https://github.com/user-attachments/assets/f2b76b43-34de-4235-b1e3-a381ae49cfe6" />
 <img width="294" alt="66" src="https://github.com/user-attachments/assets/5cba9f85-ba4e-467f-96d8-b1d0bf3b7242" />
+
+Create a new session with the user: root and password: root.
+
 <img width="450" alt="67" src="https://github.com/user-attachments/assets/02c21061-c47d-4b77-a403-c68cf31d57a9" />
 <img width="450" alt="68" src="https://github.com/user-attachments/assets/d2264114-8d6e-4500-b7c9-2f29f309671e" />
+
+Create a database called osTicket
+
 <img width="524" alt="69" src="https://github.com/user-attachments/assets/28676a1d-ab36-453d-b3d1-df530f30d6a2" />
 <img width="420" alt="70" src="https://github.com/user-attachments/assets/d0f05e86-73cb-4fa4-b8f4-00980195065b" />
 
 
 <h3> 1️⃣2️⃣ Setup the database </h3>
 
+Go back to the osTicket website and continue with the setup. 
+
+Name the Help Desk whatever you want. Same with the email.
+
+For the admin user, the email address needs to be different from the help desk email.
+
+For the username and password, I just went with username: adminuser and password: Password1
+
+Enter osTicket for the MySQL Database and username: root and password: root
+
 <img width="540" alt="58" src="https://github.com/user-attachments/assets/74863475-8aca-4941-8165-73534d95c69d" />
 <img width="390" alt="72" src="https://github.com/user-attachments/assets/c276a26d-4cf0-49b6-92ae-1d56536ca53a" />
+<img width="442" alt="73" src="https://github.com/user-attachments/assets/1d267246-eba9-4155-ac3d-689d65c0f274" />
 
+This is the link that you use for logging in as an admin. http://localhost/osTicket/scp/login.php
 
-<h3> 1️⃣3️⃣ Finalize and cleanup </h3>
+<img width="700" alt="74" src="https://github.com/user-attachments/assets/02a52ecc-d682-4349-9421-ff70d6972f68" />
 
+This is the link for end-users to make trouble tickets for themselves. http://localhost/osTicket/
 
+<img width="700" alt="75" src="https://github.com/user-attachments/assets/abb8b765-77c8-4415-a890-bee2cdeb5699" />
